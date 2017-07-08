@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import static pl.gbielanski.habittrackerapp.data.HabitContract.HabitEntry.*;
 
-public class HabitDbHelper extends SQLiteOpenHelper{
+public class HabitDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_DB =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     _ID + " INTEGER PRIMARY KEY," +
@@ -18,6 +18,7 @@ public class HabitDbHelper extends SQLiteOpenHelper{
 
     private static final String DATABASE_NAME = "habit.db";
     private static final int VERSION = 1;
+
     public HabitDbHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }

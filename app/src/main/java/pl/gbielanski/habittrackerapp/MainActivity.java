@@ -22,7 +22,7 @@ import static pl.gbielanski.habittrackerapp.data.HabitContract.HabitEntry._ID;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = "HabbitTracker";
+    private static final String TAG = "HabbitTracker";
     private HabitDbHelper habitDbHelper;
 
     @Override
