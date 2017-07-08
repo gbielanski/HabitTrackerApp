@@ -3,7 +3,7 @@ package pl.gbielanski.habittrackerapp.data;
 import android.provider.BaseColumns;
 
 public class HabitContract {
-    class HabitEntry implements BaseColumns{
+    public class HabitEntry implements BaseColumns{
         public static final String TABLE_NAME = "habits";
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_HABIT_NAME = "habit";
