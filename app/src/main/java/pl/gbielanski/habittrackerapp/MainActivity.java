@@ -33,10 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         insertDataIntoTable();
 
-        SQLiteDatabase sqLiteDatabase = habitDbHelper.getReadableDatabase();
-
-        String [] projection = {_ID, COLUMN_HABIT_NAME, COLUMN_FREQUENCY_NAME};
-        Cursor cursor = sqLiteDatabase.query(TABLE_NAME, projection, null, null, null, null, null);
+        Cursor cursor = readDataFromTable();
         while (cursor.moveToNext()){
             int idColumnIndex = cursor.getColumnIndex(_ID);
             int habitColumnIndex = cursor.getColumnIndex(COLUMN_HABIT_NAME);
@@ -51,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         cursor.close();
+    }
+
+    private Cursor readDataFromTable() {
+        SQLiteDatabase sqLiteDatabase = habitDbHelper.getReadableDatabase();
+
+        String [] projection = {_ID, COLUMN_HABIT_NAME, COLUMN_FREQUENCY_NAME};
+        return sqLiteDatabase.query(TABLE_NAME, projection, null, null, null, null, null);
     }
 
     private String getFrequencyDescription(int frequency) {
